@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnTheSpot - Web Version</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e90ff, #00bfff);
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600') center/cover;
+            animation: backgroundAnimation 30s infinite linear;
+        }
+
+        .palm {
+            position: fixed;
+            bottom: -50px;
+            width: 300px;
+            height: 300px;
+            background: url('https://www.pngmart.com/files/7/Palm-Tree-PNG-Free-Download.png') no-repeat bottom/contain;
+            z-index: 0;
+        }
+
+        .palm-left {
+            left: -50px;
+            transform: rotate(15deg);
+        }
+
+        .palm-right {
+            right: -50px;
+            transform: scaleX(-1) rotate(15deg);
+        }
+
+        .waves {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('https://www.transparentpng.com/thumb/water-wave/blue-wave-png-pictures-4.png') repeat-x;
+            background-size: 1000px 100px;
+            animation: waveAnimation 20s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes waveAnimation {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #00a8ff, #0097e6);
+            border: none;
+            padding: 12px 24px;
+            color: white;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="waves"></div>
+    <div class="palm palm-left"></div>
+    <div class="palm palm-right"></div>
+    
+    <div class="container">
+        <div class="content">
+            <h1>OnTheSpot</h1>
+            <p>Bienvenue dans la version web de OnTheSpot</p>
+            <button class="btn">Commencer</button>
+        </div>
+    </div>
+</body>
+</html>
