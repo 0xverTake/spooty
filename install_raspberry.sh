@@ -37,7 +37,7 @@ chown $USER:$USER $INSTALL_DIR
 
 echo -e "${BLUE}4. Clonage du projet...${NC}"
 cd $INSTALL_DIR
-sudo -u $USER git clone https://github.com/votre-repo/onthespot.git .
+sudo -u $USER git clone https://github.com/0xverTake/spooty.git
 
 echo -e "${BLUE}5. Création de l'environnement virtuel...${NC}"
 sudo -u $USER python3 -m venv venv
